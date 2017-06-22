@@ -56,7 +56,7 @@ class Loader
         @profile = v
       end
       opt.on('-r REGION', '--region REGION', 'Specify region') { |v| region = v }
-      opt.parse!(ARGV)
+      opt.parse!(args)
     end
 
     ini = IniFile.load(CONFIG)
