@@ -18,7 +18,7 @@ OptionParser.new do |opt|
   opt.on('-h', '--help', 'Show usage') { puts opt.help ; exit }
   opt.on('-f', '--flush', 'Flush cache') { opts[:ignore] = true }
   opt.on('-p PROFILE', '--profile PROFILE', 'Specify profile') { |v|
-    profile = "profile #{v}"
+    profile = v
     Aws.config[:credentials] = Aws::SharedCredentials.new(profile_name: profile)
   }
   opt.parse!(ARGV)
